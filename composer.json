@@ -1,0 +1,32 @@
+{
+    "name": "spomky-labs/base64url",
+    "description": "Base 64 URL Safe",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["Base64", "URL", "Safe"],
+    "homepage": "https://github.com/Spomky-Labs/base64url",
+    "authors": [
+        {
+            "name": "Florent Morselli",
+            "homepage": "https://github.com/Spomky-Labs/base64url/contributors"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Base64Url\\":  "lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Base64Url\\":  "tests/"
+        }
+    },
+    "require": {
+        "php": ">=5.3"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.x-dev"
+        }
+    }
+}
