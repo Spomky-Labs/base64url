@@ -7,15 +7,18 @@ class Base64UrlTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider getTestVectors
      */
-    public function testEncodeAndDecode($message, $expected_result)
+    public function testEncodeAndDecode($message, $expected_result, $use_padding = false)
     {
-        $encoded = Base64Url::encode($message);
+        $encoded = Base64Url::encode($message, $use_padding);
         $decoded = Base64Url::decode($expected_result);
 
         $this->assertEquals($expected_result, $encoded);
         $this->assertEquals($message, $decoded);
     }
 
+    /**
+     * @see https://tools.ietf.org/html/rfc4648#section-10
+     */
     public function getTestVectors()
     {
         return array(
@@ -39,6 +42,27 @@ class Base64UrlTest extends \PHPUnit_Framework_TestCase
             ),
             array(
                 "\xfb", "-w",
+            ),
+            array(
+                "", "",
+            ),
+            array(
+                "f", "Zg==", true,
+            ),
+            array(
+                "fo", "Zm8=", true,
+            ),
+            array(
+                "foo", "Zm9v", true,
+            ),
+            array(
+                "foob", "Zm9vYg==", true,
+            ),
+            array(
+                "fooba", "Zm9vYmE=", true,
+            ),
+            array(
+                "foobar", "Zm9vYmFy", true,
             ),
         );
     }

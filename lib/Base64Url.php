@@ -7,9 +7,11 @@ namespace Base64Url;
  */
 class Base64Url
 {
-    public static function encode($data)
+    public static function encode($data, $use_padding = false)
     {
-        return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+        $encoded = strtr(base64_encode($data), '+/', '-_');
+
+        return true === $use_padding ? $encoded : rtrim($encoded, '=');
     }
 
     public static function decode($data)
