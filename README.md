@@ -33,9 +33,9 @@ Whenever keeping backward compatibility is not possible, the feature, the enhanc
 
 This library needs at least
 
-* `PHP 5.0`.
+* `PHP 5.3`.
 
-It has been successfully tested using `PHP 5.0` to `PHP 5.6` and `HHVM`.
+It has been successfully tested using `PHP 5.3` to `PHP 5.6` and `HHVM`.
 
 ## Installation
 
