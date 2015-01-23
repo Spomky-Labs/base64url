@@ -1,9 +1,9 @@
 {
     "name": "spomky-labs/base64url",
-    "description": "Base 64 URL Safe",
+    "description": "Base 64 URL Safe Encoding/decoding PHP Library",
     "type": "library",
     "license": "MIT",
-    "keywords": ["Base64", "URL", "Safe"],
+    "keywords": ["Base64", "URL", "Safe", "RFC4648"],
     "homepage": "https://github.com/Spomky-Labs/base64url",
     "authors": [
         {
