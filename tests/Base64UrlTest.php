@@ -23,46 +23,46 @@ class Base64UrlTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                "000000", "MDAwMDAw",
+                '000000', 'MDAwMDAw',
             ),
             array(
-                "\0\0\0\0", "AAAAAA",
+                "\0\0\0\0", 'AAAAAA',
             ),
             array(
-                "\xff", "_w",
+                "\xff", '_w',
             ),
             array(
-                "\xff\xff", "__8",
+                "\xff\xff", '__8',
             ),
             array(
-                "\xff\xff\xff", "____",
+                "\xff\xff\xff", '____',
             ),
             array(
-                "\xff\xff\xff\xff", "_____w",
+                "\xff\xff\xff\xff", '_____w',
             ),
             array(
-                "\xfb", "-w",
+                "\xfb", '-w',
             ),
             array(
-                "", "",
+                '', '',
             ),
             array(
-                "f", "Zg==", true,
+                'f', 'Zg==', true,
             ),
             array(
-                "fo", "Zm8=", true,
+                'fo', 'Zm8=', true,
             ),
             array(
-                "foo", "Zm9v", true,
+                'foo', 'Zm9v', true,
             ),
             array(
-                "foob", "Zm9vYg==", true,
+                'foob', 'Zm9vYg==', true,
             ),
             array(
-                "fooba", "Zm9vYmE=", true,
+                'fooba', 'Zm9vYmE=', true,
             ),
             array(
-                "foobar", "Zm9vYmFy", true,
+                'foobar', 'Zm9vYmFy', true,
             ),
         );
     }
@@ -79,7 +79,7 @@ class Base64UrlTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array(
-                " AA",
+                ' AA',
             ),
             array(
                 "\tAA",
