@@ -1,9 +1,9 @@
 # Base64 Url Safe
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/Spomky-Labs/base64url/badge.svg?branch=master&service=github)](https://coveralls.io/github/Spomky-Labs/base64url?branch=master)
 
-[![Build Status](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/build-status/master)
+[![Build Status](https://travis-ci.org/Spomky-Labs/base64url.svg?branch=master)](https://travis-ci.org/Spomky-Labs/base64url)
 [![HHVM Status](http://hhvm.h4cc.de/badge/Spomky-Labs/base64url.png)](http://hhvm.h4cc.de/package/Spomky-Labs/base64url)
 [![PHP 7 ready](http://php7ready.timesplinter.ch/Spomky-Labs/base64url/badge.svg)](https://travis-ci.org/Spomky-Labs/base64url)
 
@@ -21,14 +21,14 @@ The release process [is described here](doc/Release.md).
 
 This library needs at least `PHP 5.3`.
 
-It has been successfully tested using `PHP 5.3` to `PHP 5.6`, `PHP 7.0` and `HHVM`.
+It has been successfully tested using `PHP 5.4` to `PHP 5.6`, `PHP 7.0` and `HHVM`.
 
 ## Installation
 
 The preferred way to install this library is to rely on Composer:
 
 ```sh
-composer require "spomky-labs/base64url" "~1.0.0"
+composer require "spomky-labs/base64url"
 ```
 
 ## How to use
