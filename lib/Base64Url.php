@@ -14,7 +14,7 @@ namespace Base64Url;
 /**
  * Encode and decode data into Base64 Url Safe.
  */
-class Base64Url
+final class Base64Url
 {
     /**
      * @param string $data        The data to encode
