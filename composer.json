@@ -13,14 +13,15 @@
     ],
     "autoload": {
         "psr-4": {
-            "Base64Url\\":  "lib/"
+            "Base64Url\\":  "src/"
         }
     },
     "require": {
         "php": ">=5.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0"
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls": "*"
     },
     "extra": {
         "branch-alias": {
