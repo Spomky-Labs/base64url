@@ -5,16 +5,20 @@ php:
     - 5.4
     - 5.5
     - 5.6
-    - 7
+    - 7.0
+    - nightly
     - hhvm
+
+matrix:
+    allow_failures:
+        - php: nightly
 
 before_script:
     - composer install
-
-script:
     - mkdir -p build/logs
-    - php vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
-
+ 
+script:
+    - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+ 
 after_success:
-    - wget https://scrutinizer-ci.com/ocular.phar
-    - php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml
+    - vendor/bin/coveralls --no-interaction
