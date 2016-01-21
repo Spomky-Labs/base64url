@@ -13,6 +13,7 @@ matrix:
         - php: nightly
 
 before_script:
+    - composer self-update
     - composer install
     - mkdir -p build/logs
  
