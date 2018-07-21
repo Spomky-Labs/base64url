@@ -10,13 +10,14 @@
  */
 
 use Base64Url\Base64Url;
+use PHPUnit\Framework\TestCase;
 
-class Base64UrlTest extends \PHPUnit_Framework_TestCase
+class Base64UrlTest extends TestCase
 {
     /**
      * @dataProvider getTestVectors
      */
-    public function testEncodeAndDecode($message, $expected_result, $use_padding = false)
+    public function testEncodeAndDecode(string $message, string $expected_result, bool $use_padding = false): void
     {
         $encoded = Base64Url::encode($message, $use_padding);
         $decoded = Base64Url::decode($expected_result);
@@ -28,7 +29,7 @@ class Base64UrlTest extends \PHPUnit_Framework_TestCase
     /**
      * @see https://tools.ietf.org/html/rfc4648#section-10
      */
-    public function getTestVectors()
+    public function getTestVectors(): array
     {
         return [
             [
@@ -79,13 +80,13 @@ class Base64UrlTest extends \PHPUnit_Framework_TestCase
     /**
      * @dataProvider getTestBadVectors
      */
-    public function testBadInput($input)
+    public function testBadInput(string $input): void
     {
         $decoded = Base64Url::decode($input);
         $this->assertEquals("\00", $decoded);
     }
 
-    public function getTestBadVectors()
+    public function getTestBadVectors(): array
     {
         return [
             [

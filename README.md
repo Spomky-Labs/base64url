@@ -2,10 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/Spomky-Labs/base64url/badge.svg?branch=master&service=github)](https://coveralls.io/github/Spomky-Labs/base64url?branch=master)
-
 [![Build Status](https://travis-ci.org/Spomky-Labs/base64url.svg?branch=master)](https://travis-ci.org/Spomky-Labs/base64url)
-[![HHVM Status](http://hhvm.h4cc.de/badge/Spomky-Labs/base64url.png)](http://hhvm.h4cc.de/package/Spomky-Labs/base64url)
-[![PHP 7 ready](http://php7ready.timesplinter.ch/Spomky-Labs/base64url/badge.svg)](https://travis-ci.org/Spomky-Labs/base64url)
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0f8f9b12-2076-4d0e-a34e-c6f097c61b16/big.png)](https://insight.sensiolabs.com/projects/0f8f9b12-2076-4d0e-a34e-c6f097c61b16)
 
@@ -19,9 +16,9 @@ The release process [is described here](doc/Release.md).
 
 ## Prerequisites
 
-This library needs at least `PHP 5.3`.
+This library needs at least `PHP 7.1`.
 
-It has been successfully tested using `PHP 5.4` to `PHP 5.6`, `PHP 7.0` and `HHVM`.
+It has been successfully tested using `PHP 7.1`, `PHP 7.2` and `nightly`.
 
 ## Installation
 
