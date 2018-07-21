@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The MIT License (MIT)
  *
@@ -22,11 +24,11 @@ final class Base64Url
      *
      * @return string The data encoded
      */
-    public static function encode($data, $use_padding = false)
+    public static function encode(string $data, bool $use_padding = false): string
     {
-        $encoded = strtr(base64_encode($data), '+/', '-_');
+        $encoded = \strtr(\base64_encode($data), '+/', '-_');
 
-        return true === $use_padding ? $encoded : rtrim($encoded, '=');
+        return true === $use_padding ? $encoded : \rtrim($encoded, '=');
     }
 
     /**
@@ -34,8 +36,8 @@ final class Base64Url
      *
      * @return string The data decoded
      */
-    public static function decode($data)
+    public static function decode(string $data): string
     {
-        return base64_decode(strtr($data, '-_', '+/'));
+        return \base64_decode(\strtr($data, '-_', '+/'), true);
     }
 }
