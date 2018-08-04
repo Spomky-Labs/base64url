@@ -19,16 +19,16 @@ namespace Base64Url;
 final class Base64Url
 {
     /**
-     * @param string $data        The data to encode
-     * @param bool   $use_padding If true, the "=" padding at end of the encoded value are kept, else it is removed
+     * @param string $data       The data to encode
+     * @param bool   $usePadding If true, the "=" padding at end of the encoded value are kept, else it is removed
      *
      * @return string The data encoded
      */
-    public static function encode(string $data, bool $use_padding = false): string
+    public static function encode(string $data, bool $usePadding = false): string
     {
         $encoded = \strtr(\base64_encode($data), '+/', '-_');
 
-        return true === $use_padding ? $encoded : \rtrim($encoded, '=');
+        return true === $usePadding ? $encoded : \rtrim($encoded, '=');
     }
 
     /**
