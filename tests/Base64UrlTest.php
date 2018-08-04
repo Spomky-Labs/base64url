@@ -21,12 +21,12 @@ class Base64UrlTest extends TestCase
      *
      * @test
      */
-    public function encodeAndDecode(string $message, string $expected_result, bool $use_padding = false): void
+    public function encodeAndDecode(string $message, string $expectedResult, bool $usePadding = false): void
     {
-        $encoded = Base64Url::encode($message, $use_padding);
-        $decoded = Base64Url::decode($expected_result);
+        $encoded = Base64Url::encode($message, $usePadding);
+        $decoded = Base64Url::decode($expectedResult);
 
-        static::assertEquals($expected_result, $encoded);
+        static::assertEquals($expectedResult, $encoded);
         static::assertEquals($message, $decoded);
     }
 
