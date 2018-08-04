@@ -17,12 +17,12 @@ class Base64UrlTest extends TestCase
     /**
      * @dataProvider getTestVectors
      */
-    public function testEncodeAndDecode(string $message, string $expected_result, bool $use_padding = false): void
+    public function testEncodeAndDecode(string $message, string $expectedResult, bool $usePadding = false): void
     {
-        $encoded = Base64Url::encode($message, $use_padding);
-        $decoded = Base64Url::decode($expected_result);
+        $encoded = Base64Url::encode($message, $usePadding);
+        $decoded = Base64Url::decode($expectedResult);
 
-        $this->assertEquals($expected_result, $encoded);
+        $this->assertEquals($expectedResult, $encoded);
         $this->assertEquals($message, $decoded);
     }
 
