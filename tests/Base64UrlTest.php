@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * The MIT License (MIT)
  *
@@ -16,14 +18,16 @@ class Base64UrlTest extends TestCase
 {
     /**
      * @dataProvider getTestVectors
+     *
+     * @test
      */
-    public function testEncodeAndDecode(string $message, string $expectedResult, bool $usePadding = false): void
+    public function encodeAndDecode(string $message, string $expectedResult, bool $usePadding = false): void
     {
         $encoded = Base64Url::encode($message, $usePadding);
         $decoded = Base64Url::decode($expectedResult);
 
-        $this->assertEquals($expectedResult, $encoded);
-        $this->assertEquals($message, $decoded);
+        static::assertEquals($expectedResult, $encoded);
+        static::assertEquals($message, $decoded);
     }
 
     /**
@@ -79,11 +83,13 @@ class Base64UrlTest extends TestCase
 
     /**
      * @dataProvider getTestBadVectors
+     *
+     * @test
      */
-    public function testBadInput(string $input): void
+    public function badInput(string $input): void
     {
         $decoded = Base64Url::decode($input);
-        $this->assertEquals("\00", $decoded);
+        static::assertEquals("\00", $decoded);
     }
 
     public function getTestBadVectors(): array
