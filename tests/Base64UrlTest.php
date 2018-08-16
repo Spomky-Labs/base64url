@@ -109,4 +109,24 @@ class Base64UrlTest extends TestCase
             ],
         ];
     }
+
+    /**
+     * @dataProvider getTestNonsenseVectors
+     *
+     * @test
+     */
+    public function nonsenseInput(string $input): void
+    {
+        static::expectException(\InvalidArgumentException::class);
+        Base64Url::decode($input);
+    }
+
+    public function getTestNonsenseVectors(): array
+    {
+        return [
+            [
+                'cxr0fdsezrewklerewxoz423ocfsa3bw432yjydsa9lhdsalw',
+            ],
+        ];
+    }
 }
