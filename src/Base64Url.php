@@ -34,10 +34,17 @@ final class Base64Url
     /**
      * @param string $data The data to decode
      *
+     * @throws \InvalidArgumentException
+     *
      * @return string The data decoded
      */
     public static function decode(string $data): string
     {
-        return \base64_decode(\strtr($data, '-_', '+/'), true);
+        $decoded = \base64_decode(\strtr($data, '-_', '+/'), true);
+        if ($decoded === false) {
+            throw new \InvalidArgumentException('Invalid data provided');
+        }
+
+        return $decoded;
     }
 }
