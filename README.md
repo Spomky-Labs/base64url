@@ -6,7 +6,7 @@
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0f8f9b12-2076-4d0e-a34e-c6f097c61b16/big.png)](https://insight.sensiolabs.com/projects/0f8f9b12-2076-4d0e-a34e-c6f097c61b16)
 
-[![Latest Stable Version](https://poser.pugx.org/Spomky-Labs/base64url/v/stable.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![Total Downloads](https://poser.pugx.org/Spomky-Labs/base64url/downloads.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/base64url/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![License](https://poser.pugx.org/Spomky-Labs/base64url/license.png)](https://packagist.org/packages/Spomky-Labs/base64url)
+[![Latest Stable Version](https://poser.pugx.org/Spomky-Labs/base64url/v/stable.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![Total Downloads](https://poser.pugx.org/Spomky-Labs/base64url/downloads.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![Latest Unstable Version](https://poser.pugx.org/Spomky-Labs/base64url/v/unstable.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![License](https://poser.pugx.org/Spomky-Labs/base64url/license.png)](https://packagist.org/packages/Spomky-Labs/base64url) [![GuardRails badge](https://badges.production.guardrails.io/Spomky-Labs/base64url.svg)](https://www.guardrails.io)
 
 This library aims to provide a fast Base64 URL Safe encoder/decoder as described by the [RFC 4648](https://tools.ietf.org/html/rfc4648).
 
