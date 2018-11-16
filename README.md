@@ -1,4 +1,5 @@
-# Base64 Url Safe
+Base64 Url Safe
+===============
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Spomky-Labs/base64url/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/Spomky-Labs/base64url/badge.svg?branch=master&service=github)](https://coveralls.io/github/Spomky-Labs/base64url?branch=master)
@@ -10,17 +11,17 @@
 
 This library aims to provide a fast Base64 URL Safe encoder/decoder as described by the [RFC 4648](https://tools.ietf.org/html/rfc4648).
 
-## The Release Process
+# The Release Process
 
 The release process [is described here](doc/Release.md).
 
-## Prerequisites
+# Prerequisites
 
 This library needs at least `PHP 7.1`.
 
 It has been successfully tested using `PHP 7.1`, `PHP 7.2` and `nightly`.
 
-## Installation
+# Installation
 
 The preferred way to install this library is to rely on Composer:
 
@@ -28,14 +29,22 @@ The preferred way to install this library is to rely on Composer:
 composer require "spomky-labs/base64url"
 ```
 
-## How to use
+# How to use
 
 Take a look at [How to use](doc/Use.md) to use this library.
 
-## Contributing
+# Support
+
+I bring solutions to your problems and answer your questions.
+
+If you really love that project and the work I have done or if you want I prioritize your issues, then you can help me out for a couple of :beers: or more!
+
+[![Become a Patreon](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/FlorentMorselli)
+
+# Contributing
 
 Requests for new features, bug fixed and all other ideas to make this library useful are welcome. [Please follow these best practices](doc/Contributing.md).
 
-## Licence
+# Licence
 
 This software is release under [MIT licence](LICENSE).
