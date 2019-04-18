@@ -11,7 +11,11 @@ declare(strict_types=1);
  * of the MIT license.  See the LICENSE file for details.
  */
 
+namespace Base64Url\Test;
+
+
 use Base64Url\Base64Url;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class Base64UrlTest extends TestCase
@@ -117,7 +121,7 @@ class Base64UrlTest extends TestCase
      */
     public function nonsenseInput(string $input): void
     {
-        static::expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         Base64Url::decode($input);
     }
 

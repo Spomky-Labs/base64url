@@ -1,21 +1,52 @@
+sudo: false
 language: php
 
 php:
     - 7.1
     - 7.2
+    - 7.3
     - nightly
 
-matrix:
+cache:
+    directories:
+        - $HOME/.composer/cache
+        - vendor
+
+before_script:
+    - mkdir -p build/logs
+
+before_install:
+    - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
+
+install: travis_retry composer install
+
+script:
+    - ./vendor/bin/phpunit -c phpunit.xml.dist
+
+jobs:
     allow_failures:
         - php: nightly
 
-before_script:
-    - composer self-update
-    - composer install
-    - mkdir -p build/logs
- 
-script:
-    - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
- 
-after_success:
-    - vendor/bin/coveralls --no-interaction
+    include:
+        - stage: Metrics and quality
+          env: COVERAGE
+          before_script:
+              - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
+              - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
+          script:
+              - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+          after_script:
+              - ./vendor/bin/php-coveralls --no-interaction
+
+        - stage: Metrics and quality
+          env: STATIC_ANALYSIS
+          script:
+              - ./vendor/bin/phpstan analyse
+
+        - stage: Security Check
+          env: SECURITY_CHECK
+          before_script:
+              - wget -c https://get.sensiolabs.org/security-checker.phar
+              - chmod +x security-checker.phar
+          script:
+              - ./security-checker.phar security:check
