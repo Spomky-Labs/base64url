@@ -31,7 +31,7 @@
         "phpstan/phpstan-deprecation-rules": "^0.11",
         "phpstan/phpstan-phpunit": "^0.11",
         "phpstan/phpstan-strict-rules": "^0.11",
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^7.0|^8.0"
     },
     "extra": {
         "branch-alias": {
