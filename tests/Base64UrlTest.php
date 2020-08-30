@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2014-2018 Spomky-Labs
+ * Copyright (c) 2014-2020 Spomky-Labs
  *
  * This software may be modified and distributed under the terms
  * of the MIT license.  See the LICENSE file for details.
@@ -13,13 +13,23 @@ declare(strict_types=1);
 
 namespace Base64Url\Test;
 
-
 use Base64Url\Base64Url;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class Base64UrlTest extends TestCase
 {
+    /**
+     * @test
+     */
+    public function encodeAndDecodeWithPadding(): void
+    {
+        $encodedWithoutPaddingOption = Base64Url::encode('foo-BAR');
+        $encodedWithPadding = Base64Url::encode('foo-BAR', true);
+
+        static::assertNotEquals($encodedWithPadding, $encodedWithoutPaddingOption);
+    }
+
     /**
      * @dataProvider getTestVectors
      *
@@ -63,6 +73,12 @@ class Base64UrlTest extends TestCase
             ],
             [
                 '', '',
+            ],
+            [
+                'f', 'Zg',
+            ],
+            [
+                'fo', 'Zm8',
             ],
             [
                 'f', 'Zg==', true,
