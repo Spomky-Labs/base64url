@@ -32,12 +32,16 @@ jobs:
         - stage: Metrics and quality
           env: COVERAGE
           before_script:
+              - wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
+              - chmod +x phpunit
+              - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.2.0/php-coveralls.phar
+              - chmod +x php-coveralls.phar
               - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
               - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
           script:
-              - ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+              - ./phpunit --coverage-clover build/logs/clover.xml
           after_script:
-              - ./vendor/bin/php-coveralls --no-interaction
+              - ./php-coveralls.phar --no-interaction
 
         - stage: Metrics and quality
           env: STATIC_ANALYSIS
@@ -46,12 +50,12 @@ jobs:
 
         - stage: Metrics and quality
           env: STATIC_ANALYSIS
-          script:
-              - phpenv local "7.4"
+          before_script:
               - ./vendor/bin/phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml
               - wget https://github.com/infection/infection/releases/download/0.17.0/infection.phar
               - wget https://github.com/infection/infection/releases/download/0.17.0/infection.phar.asc
               - chmod +x infection.phar
+          script:
               - ./infection.phar -s --threads=$(nproc) --coverage=build
 
         - stage: Security Check
