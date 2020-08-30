@@ -21,8 +21,12 @@ before_install:
 
 install: travis_retry composer install
 
+before_script:
+  - wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
+  - chmod +x phpunit
+
 script:
-    - ./vendor/bin/phpunit -c phpunit.xml.dist
+    - ./phpunit -c phpunit.xml.dist
 
 jobs:
     allow_failures:
@@ -51,7 +55,9 @@ jobs:
         - stage: Metrics and quality
           env: STATIC_ANALYSIS
           before_script:
-              - ./vendor/bin/phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml
+              - wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
+              - chmod +x phpunit
+              - ./phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml
               - wget https://github.com/infection/infection/releases/download/0.17.0/infection.phar
               - wget https://github.com/infection/infection/releases/download/0.17.0/infection.phar.asc
               - chmod +x infection.phar
