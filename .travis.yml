@@ -47,6 +47,7 @@ jobs:
         - stage: Metrics and quality
           env: STATIC_ANALYSIS
           script:
+              - phpenv local "7.4"
               - ./vendor/bin/phpunit --coverage-xml=build/coverage-xml --log-junit=build/junit.xml
               - wget https://github.com/infection/infection/releases/download/0.17.0/infection.phar
               - wget https://github.com/infection/infection/releases/download/0.17.0/infection.phar.asc
