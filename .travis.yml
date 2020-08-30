@@ -13,9 +13,6 @@ cache:
         - $HOME/.composer/cache
         - vendor
 
-before_script:
-    - mkdir -p build/logs
-
 before_install:
     - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
 
@@ -24,6 +21,7 @@ install: travis_retry composer install
 before_script:
   - wget -O phpunit https://phar.phpunit.de/phpunit-9.phar
   - chmod +x phpunit
+  - mkdir -p build/logs
 
 script:
     - ./phpunit -c phpunit.xml.dist
