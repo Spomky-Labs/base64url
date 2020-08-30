@@ -19,7 +19,7 @@ The release process [is described here](doc/Release.md).
 
 This library needs at least `PHP 7.1`.
 
-It has been successfully tested using `PHP 7.1`, `PHP 7.2` and `nightly`.
+It has been successfully tested using `PHP 7.1`, `PHP 7.2`, `PHP 7.3`, `PHP 7.4` and `nightly`.
 
 # Installation
 
